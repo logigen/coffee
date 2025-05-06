@@ -1,0 +1,20 @@
+[
+  {
+    "Id": 1,
+    "FullName": "Соколов Михаил Андреевич",
+    "Phone": "+79012223344",
+    "Email": "sokolov@example.com",
+    "VehicleId": 1,
+    "IsActive": true,
+    "Notes": null
+  },
+  {
+    "Id": 2,
+    "FullName": "Морозова Анна Владимировна",
+    "Phone": "+79154445566",
+    "Email": "morozova@example.com",
+    "VehicleId": 2,
+    "IsActive": true,
+    "Notes": null
+  }
+]

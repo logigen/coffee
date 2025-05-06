@@ -1,0 +1,202 @@
+﻿<Window x:Class="Coffee.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Coffee.Windows"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Система доставки Coffee" Height="700" Width="1000"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="14"
+        FontFamily="Roboto"
+        WindowStartupLocation="CenterScreen"
+        Closing="Window_Closing"
+        Icon="/Images/coffee_icon.png">
+
+    <Window.Resources>
+        <Style x:Key="MenuButtonStyle" TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedButton}">
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="Width" Value="250" />
+            <Setter Property="Height" Value="60" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="materialDesign:ButtonAssist.CornerRadius" Value="8" />
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Боковая панель навигации -->
+        <Border Grid.Column="0" Background="#FF2C3E50" Width="300">
+            <StackPanel>
+                <Image Source="/Images/coffee_logo.png" Height="120" Margin="20"/>
+                <TextBlock Text="СИСТЕМА УПРАВЛЕНИЯ" HorizontalAlignment="Center" 
+                           Foreground="White" FontSize="18" FontWeight="Bold" Margin="0,0,0,20"/>
+
+                <Button Content="Принять заказ" Style="{StaticResource MenuButtonStyle}" 
+                        Background="#FF3498DB" Click="AddOrder_Click">
+                    <Button.ContentTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="CartPlus" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Button.ContentTemplate>
+                </Button>
+
+                <Button Content="Активные заказы" Style="{StaticResource MenuButtonStyle}" 
+                        Background="#FF27AE60" Click="ViewOrders_Click">
+                    <Button.ContentTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="ClipboardList" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Button.ContentTemplate>
+                </Button>
+
+                <Button Content="Управление меню" Style="{StaticResource MenuButtonStyle}" 
+                        Background="#FFE67E22" Click="ManageProducts_Click">
+                    <Button.ContentTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Food" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Button.ContentTemplate>
+                </Button>
+
+                <Button Content="Клиенты" Style="{StaticResource MenuButtonStyle}" 
+                        Background="#FF9B59B6" Click="ManageClients_Click">
+                    <Button.ContentTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="AccountMultiple" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Button.ContentTemplate>
+                </Button>
+
+                <Button Content="Курьеры и транспорт" Style="{StaticResource MenuButtonStyle}" 
+                        Background="#FFE74C3C" Click="ManageCouriers_Click">
+                    <Button.ContentTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Bike" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Button.ContentTemplate>
+                </Button>
+
+                <Button Content="Отслеживание доставки" Style="{StaticResource MenuButtonStyle}" 
+                        Background="#FF1ABC9C" Click="TrackDelivery_Click">
+                    <Button.ContentTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="MapMarker" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Button.ContentTemplate>
+                </Button>
+
+                <Button Content="Оплата заказов" Style="{StaticResource MenuButtonStyle}" 
+                        Background="#FF34495E" Click="ProcessPayment_Click">
+                    <Button.ContentTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="CreditCard" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Button.ContentTemplate>
+                </Button>
+
+                <Button Content="Отчеты и статистика" Style="{StaticResource MenuButtonStyle}" 
+                        Background="#FF7F8C8D" Click="ShowReports_Click">
+                    <Button.ContentTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="ChartBar" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Button.ContentTemplate>
+                </Button>
+            </StackPanel>
+        </Border>
+
+        <!-- Основное содержимое -->
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Верхняя панель с информацией -->
+            <Border Grid.Row="0" Background="#FFF5F5F5" Padding="20,10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0">
+                        <TextBlock x:Name="CurrentTimeTextBlock" Text="" FontSize="32" FontWeight="Bold"/>
+                        <TextBlock x:Name="CurrentDateTextBlock" Text="" FontSize="18" Opacity="0.7"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                        <Border Background="#FFE74C3C" CornerRadius="5" Padding="10,5" Margin="10,0">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Motorbike" Foreground="White" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                <TextBlock Text="В пути: " Foreground="White"/>
+                                <TextBlock x:Name="ActiveDeliveriesTextBlock" Text="0" Foreground="White" FontWeight="Bold"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Background="#FF27AE60" CornerRadius="5" Padding="10,5" Margin="10,0">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="ClipboardCheck" Foreground="White" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                <TextBlock Text="Завершено: " Foreground="White"/>
+                                <TextBlock x:Name="CompletedOrdersTextBlock" Text="0" Foreground="White" FontWeight="Bold"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Background="#FF3498DB" CornerRadius="5" Padding="10,5" Margin="10,0">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Cash" Foreground="White" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                <TextBlock Text="Выручка: " Foreground="White"/>
+                                <TextBlock x:Name="TotalRevenueTextBlock" Text="0" Foreground="White" FontWeight="Bold"/>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <!-- Область для отображения данных -->
+            <Grid Grid.Row="1" Margin="20">
+                <Border Background="White" CornerRadius="10">
+                    <Grid>
+                        <TextBlock Text="Добро пожаловать в систему управления доставкой Coffee" 
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                                   FontSize="24" FontWeight="Bold" Foreground="#FF2C3E50"/>
+
+                        <ContentControl x:Name="MainContent" Visibility="Collapsed"/>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

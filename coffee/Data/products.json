@@ -1,0 +1,29 @@
+[
+  {
+    "Id": 1,
+    "Name": "Кофе Латте",
+    "Category": "Кофе",
+    "Price": 200,
+    "Description": "Кофе с молоком",
+    "IsAvailable": true,
+    "ImagePath": null
+  },
+  {
+    "Id": 2,
+    "Name": "Чизкейк",
+    "Category": "Десерты",
+    "Price": 350,
+    "Description": "Классический чизкейк",
+    "IsAvailable": true,
+    "ImagePath": null
+  },
+  {
+    "Id": 3,
+    "Name": "Чай зеленый",
+    "Category": "Напитки",
+    "Price": 150,
+    "Description": "Зеленый чай",
+    "IsAvailable": true,
+    "ImagePath": null
+  }
+]

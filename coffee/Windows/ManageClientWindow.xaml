@@ -1,0 +1,34 @@
+<Window x:Class="Coffee.Windows.ManageClientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Управление клиентом" Height="600" Width="400"
+        WindowStartupLocation="CenterScreen">
+	<Grid Margin="20">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+		<TextBlock Grid.Row="0" Text="Управление клиентом" FontSize="20" FontWeight="Bold" Margin="0,0,0,20"/>
+
+		<StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,0,0,20">
+			<TextBox x:Name="FullNameTextBox" materialDesign:HintAssist.Hint="ФИО" Margin="0,10" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+			<TextBox x:Name="PhoneTextBox" materialDesign:HintAssist.Hint="Телефон" Margin="0,10" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+			<TextBox x:Name="EmailTextBox" materialDesign:HintAssist.Hint="Email" Margin="0,10" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+			<TextBox x:Name="StreetTextBox" materialDesign:HintAssist.Hint="Улица" Margin="0,10" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+			<TextBox x:Name="BuildingNumberTextBox" materialDesign:HintAssist.Hint="Номер дома" Margin="0,10" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+			<TextBox x:Name="ApartmentNumberTextBox" materialDesign:HintAssist.Hint="Номер квартиры" Margin="0,10" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+			<TextBox x:Name="EntranceTextBox" materialDesign:HintAssist.Hint="Подъезд" Margin="0,10" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+			<TextBox x:Name="FloorTextBox" materialDesign:HintAssist.Hint="Этаж" Margin="0,10" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+			<TextBox x:Name="PostalCodeTextBox" materialDesign:HintAssist.Hint="Почтовый индекс" Margin="0,10" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+			<TextBox x:Name="NotesTextBox" materialDesign:HintAssist.Hint="Примечания" Margin="0,10" Style="{StaticResource MaterialDesignFloatingHintTextBox}" AcceptsReturn="True"/>
+		</StackPanel>
+
+		<StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+			<Button x:Name="SaveClientButton" Content="Сохранить" Margin="0,0,10,0" Click="SaveClientButton_Click"/>
+			<Button x:Name="CancelButton" Content="Отмена" Click="CancelButton_Click"/>
+		</StackPanel>
+	</Grid>
+</Window>

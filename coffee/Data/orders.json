@@ -1,0 +1,28 @@
+[
+  {
+    "Id": 1,
+    "OrderNumber": "250505-001",
+    "ClientId": 1,
+    "ItemsJson": "[{\"ProductId\":1,\"Quantity\":2,\"Price\":200},{\"ProductId\":3,\"Quantity\":1,\"Price\":150}]",
+    "Status": "Completed",
+    "DeliveryAddress": {
+      "Street": "��. ������",
+      "BuildingNumber": "15",
+      "ApartmentNumber": "42",
+      "Entrance": "2",
+      "Floor": "5",
+      "City": "������",
+      "PostalCode": null,
+      "Latitude": null,
+      "Longitude": null
+    },
+    "TotalAmount": 550,
+    "PaymentType": "Card",
+    "IsPaid": false,
+    "CourierId": 1,
+    "DeliveryInstructions": "��������� �� 10 �����",
+    "CreatedAt": "2025-05-05T10:00:00",
+    "EstimatedDeliveryTime": null,
+    "CompletedAt": "2025-05-05T11:00:00"
+  }
+]

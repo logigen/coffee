@@ -1,0 +1,19 @@
+﻿<ItemGroup>
+  <Page Include="Windows\AddOrderWindow.xaml" />
+  <Page Include="Windows\MainWindow.xaml" />
+  <Page Include="Windows\ManageClientWindow.xaml" />
+  <Page Include="Windows\OrdersListWindow.xaml" />
+</ItemGroup>
+<ItemGroup>
+  <Compile Include="App.xaml.cs" />
+  <Compile Include="Models\Client.cs" />
+  <Compile Include="Models\Courier.cs" />
+  <Compile Include="Models\DataManager.cs" />
+  <Compile Include="Models\Order.cs" />
+  <Compile Include="Models\Product.cs" />
+  <Compile Include="Models\Vehicle.cs" />
+  <Compile Include="Windows\AddOrderWindow.xaml.cs" />
+  <Compile Include="Windows\MainWindow.xaml.cs" />
+  <Compile Include="Windows\ManageClientWindow.xaml.cs" />
+  <Compile Include="Windows\OrdersListWindow.xaml.cs" />
+</ItemGroup>

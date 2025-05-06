@@ -1,0 +1,38 @@
+[
+  {
+    "Id": 1,
+    "FullName": "Петров Алексей Иванович",
+    "Phone": "+79031234567",
+    "Email": "petrov@example.com",
+    "Address": {
+      "Street": "ул. Ленина",
+      "BuildingNumber": "15",
+      "ApartmentNumber": "42",
+      "Entrance": "2",
+      "Floor": "5",
+      "City": "Москва",
+      "PostalCode": null,
+      "Latitude": null,
+      "Longitude": null
+    },
+    "Notes": null
+  },
+  {
+    "Id": 2,
+    "FullName": "Сидорова Елена Петровна",
+    "Phone": "+79169876543",
+    "Email": "sidorova@example.com",
+    "Address": {
+      "Street": "пр. Победы",
+      "BuildingNumber": "78",
+      "ApartmentNumber": "15",
+      "Entrance": "1",
+      "Floor": "3",
+      "City": "Москва",
+      "PostalCode": null,
+      "Latitude": null,
+      "Longitude": null
+    },
+    "Notes": null
+  }
+]
